@@ -11,6 +11,12 @@ local modules = {
     "modules.ui.compositor",
     "modules.ui.animations",
     "modules.ui.rules",
+
+    "modules.keybinds.wmnl",
+    "modules.keybinds.mouse",
+    "modules.keybinds.system",
+    "modules.keybinds.utility",
+    "modules.keybinds.applications",
 }
 
 
