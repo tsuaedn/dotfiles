@@ -28,7 +28,11 @@ Singleton {
 
             property JsonObject appearance: JsonObject {
                 property string accent: "#f74c00"
-                property string background: "#0e0e14"
+                property string background: "#000000"
+
+                property string wallpaper: ""
+                property int wallpaperMargin: 0
+                property real wallpaperRadius: 0
             }
         }
     }

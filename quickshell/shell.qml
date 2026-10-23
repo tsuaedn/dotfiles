@@ -5,8 +5,8 @@
 import Quickshell
 import QtQuick
 
+import qs.ui.wallpaper
+
 ShellRoot {
-    Component.onCompleted: {
-        Settings;
-    }
+    Wallpaper {}
 }
