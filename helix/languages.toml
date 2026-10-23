@@ -1,0 +1,72 @@
+# ── Language servers ─────────────────────────────────────────────
+[language-server.emmet-ls]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+# Biome as an LSP
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+# TypeScript 7 native language server
+[language-server.ts-native]
+command = "tsc"
+args = ["--lsp", "--stdio"]
+
+# ── Rust ─────────────────────────────────────────────────────────
+
+[[language]]
+name = "rust"
+auto-format = true
+persistent-diagnostic-sources = ["rustc", "clippy"]
+
+[language-server.rust-analyzer.config]
+check = { command = "clippy" }
+
+# ── Web: HTML / CSS ──────────────────────────────────────────────
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "emmet-ls"]
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "html"] }
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "emmet-ls", "biome"]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "file.css"] }
+
+# ── TypeScript / JavaScript ──────────────────────────────────────
+
+[[language]]
+name = "typescript"
+language-servers = ["ts-native", "biome"]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "file.ts"] }
+
+[[language]]
+name = "tsx"
+language-servers = ["ts-native", "biome"]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "file.tsx"] }
+
+[[language]]
+name = "javascript"
+language-servers = ["ts-native", "biome"]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "file.js"] }
+
+[[language]]
+name = "jsx"
+language-servers = ["ts-native", "biome"]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "file.jsx"] }
+
+# ── Data ─────────────────────────────────────────────────────────
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server", "biome"]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "file.json"] }
