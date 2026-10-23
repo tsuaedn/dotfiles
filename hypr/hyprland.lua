@@ -7,6 +7,10 @@ local modules = {
     "modules.hardware.keyboard",
     "modules.hardware.touchpad",
     "modules.hardware.mouse",
+
+    "modules.ui.compositor",
+    "modules.ui.animations",
+    "modules.ui.rules",
 }
 
 
