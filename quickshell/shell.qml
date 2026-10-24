@@ -6,7 +6,9 @@ import Quickshell
 import QtQuick
 
 import qs.ui.wallpaper
+import qs.ui.island
 
 ShellRoot {
     Wallpaper {}
+    Island {}
 }
