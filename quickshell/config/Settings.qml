@@ -7,6 +7,8 @@ Singleton {
     id: root
 
     property alias appearance: adapter.appearance
+    property alias wallpaper: adapter.wallpaper
+    property alias island: adapter.island
 
     FileView {
         id: file
@@ -31,14 +33,18 @@ Singleton {
                 property string text: "#ffffff"
                 property string background: "#000000"
                 property string placeholder: "gray"
+            }
 
-                property string wallpaper: ""
-                property int wallpaperMargin: 0
-                property real wallpaperRadius: 0
+            property JsonObject wallpaper: JsonObject {
+                property string path: ""
+                property real margin: 0
+                property real radius: 0
+            }
 
-                property real islandHeight: 35
-                property real islandContentBottomLeftRadius: 20
-                property real islandContentBottomRightRadius: 20
+            property JsonObject island: JsonObject {
+                property real height: 35
+                property real contentBottomLeftRadius: 20
+                property real contentBottomRightRadius: 20
             }
         }
     }

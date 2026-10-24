@@ -25,7 +25,7 @@ Variants {
         anchors.left: true
         anchors.right: true
 
-        exclusiveZone: Settings.appearance.islandHeight
+        exclusiveZone: Settings.island.height
         implicitHeight: modelData.height
 
         exclusionMode: ExclusionMode.Ignore
@@ -62,8 +62,8 @@ Variants {
 
             color: Settings.appearance.background
 
-            bottomLeftRadius: Settings.appearance.islandContentBottomLeftRadius
-            bottomRightRadius: Settings.appearance.islandContentBottomRightRadius
+            bottomLeftRadius: Settings.island.contentBottomLeftRadius
+            bottomRightRadius: Settings.island.contentBottomRightRadius
 
             clip: true
             antialiasing: true

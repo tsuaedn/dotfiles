@@ -16,7 +16,7 @@ Variants {
         required property var modelData
         screen: modelData
 
-        readonly property string path: Settings.appearance.wallpaper
+        readonly property string path: Settings.wallpaper.path
         readonly property string url: path !== "" ? "file://" + path : ""
         readonly property bool isVideo: /\.(mp4|webm|mkv|mov)$/i.test(path)
 
@@ -34,8 +34,8 @@ Variants {
         ClippingRectangle {
             id: frame
             anchors.fill: parent
-            anchors.margins: Settings.appearance.wallpaperMargin
-            radius: Settings.appearance.wallpaperRadius
+            anchors.margins: Settings.wallpaper.margin
+            radius: Settings.wallpaper.radius
             color: Settings.appearance.background
 
             Loader {

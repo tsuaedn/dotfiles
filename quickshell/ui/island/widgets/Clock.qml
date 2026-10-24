@@ -11,7 +11,7 @@ Rectangle {
     id: root
 
     implicitWidth: 350
-    implicitHeight: Settings.appearance.islandHeight
+    implicitHeight: Settings.island.height
 
     Layout.alignment: Qt.AlignCenter
     color: "transparent"
