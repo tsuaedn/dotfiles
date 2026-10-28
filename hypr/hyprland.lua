@@ -17,6 +17,8 @@ local modules = {
     "modules.keybinds.system",
     "modules.keybinds.utility",
     "modules.keybinds.applications",
+
+    "plugins.hypr3d",
 }
 
 
