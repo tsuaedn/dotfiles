@@ -13,6 +13,7 @@ FocusScope {
     implicitWidth: 500
     implicitHeight: layout.implicitHeight
 
+    property string terminal: "ghostty"
     property string mode: input.text.startsWith("=") ? "calc" : input.text.startsWith(":") ? "clipboard" : "launcher"
 
     property var allEntries: {
@@ -128,7 +129,20 @@ FocusScope {
     }
 
     function launch(app) {
-        app.entry.execute();
+        if (!app || !app.entry)
+            return;
+
+        const entry = app.entry;
+
+        if (entry.runInTerminal) {
+            // Drop desktop-file field codes like %U / %f if present
+            const cmd = Array.from(entry.command).filter(a => !a.startsWith("%"));
+
+            Quickshell.execDetached([root.terminal, "-e"].concat(cmd));
+        } else {
+            entry.execute();
+        }
+
         root.close();
 
         Quickshell.execDetached(["hyprctl", "dispatch", "focuscurrentorlast"]);
